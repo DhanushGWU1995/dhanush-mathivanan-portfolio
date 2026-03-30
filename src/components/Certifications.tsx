@@ -22,12 +22,17 @@ export function Certifications() {
                     <CheckCircle2 size={24} />
                   )}
                 </div>
-                <div>
+                <div className="flex-1 min-w-0">
                   <h4 className="font-semibold text-foreground leading-snug mb-1">{cert.name}</h4>
                   <div className="flex items-center justify-between text-sm text-muted-foreground">
                     <span>{cert.issuer}</span>
-                    <span className="font-mono text-xs glass px-2 py-0.5 rounded text-primary border-primary/20">{cert.year}</span>
+                    <span className="font-mono text-xs glass px-2 py-0.5 rounded text-primary border-primary/20 shrink-0 ml-2">{cert.year}</span>
                   </div>
+                  {cert.credentialId && (
+                    <div className="mt-1.5 text-xs text-muted-foreground/60 font-mono">
+                      ID: {cert.credentialId}
+                    </div>
+                  )}
                 </div>
               </div>
             </FadeIn>
