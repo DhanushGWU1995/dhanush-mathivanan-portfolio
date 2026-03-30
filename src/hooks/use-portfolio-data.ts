@@ -38,7 +38,7 @@ export interface Certification {
 export function usePortfolioData() {
   const personalInfo = {
     name: "Dhanush Mathivanan",
-    title: "Data Science & Cloud Engineer",
+    title: "Data Science, Cloud & Full-Stack Engineer",
     location: "Arlington, VA",
     phone: "240-385-2816",
     email: "dhanush.mathivanan@gwu.edu",
