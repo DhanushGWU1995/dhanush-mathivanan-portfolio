@@ -144,6 +144,13 @@ export function usePortfolioData() {
       degree: "Master of Science in Data Science",
       duration: "Aug 2025 - May 2027",
       coursework: "Data Analytics, Machine Learning, Deep Learning, NLP, Data Warehousing"
+    },
+    {
+      institution: "Anna University",
+      location: "Chennai, India",
+      degree: "Bachelor of Engineering in Computer Science",
+      duration: "Aug 2012 - May 2016",
+      coursework: "Data Structures, Algorithms, Operating Systems, Database Management, Computer Networks, Software Engineering"
     }
   ];
 
