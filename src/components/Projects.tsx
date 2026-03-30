@@ -22,15 +22,17 @@ export function Projects() {
                     <Activity size={24} />
                   </div>
                   <div className="flex gap-3">
-                    <a
-                      href={project.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="p-2 text-muted-foreground hover:text-white transition-colors"
-                      title="GitHub Repository"
-                    >
-                      <Github size={20} />
-                    </a>
+                    {project.link.includes("github.com") && (
+                      <a
+                        href={project.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="p-2 text-muted-foreground hover:text-white transition-colors"
+                        title="GitHub Repository"
+                      >
+                        <Github size={20} />
+                      </a>
+                    )}
                     {project.liveLink && (
                       <a
                         href={project.liveLink}
@@ -38,6 +40,17 @@ export function Projects() {
                         rel="noopener noreferrer"
                         className="p-2 text-muted-foreground hover:text-primary transition-colors"
                         title="Live Demo"
+                      >
+                        <ExternalLink size={20} />
+                      </a>
+                    )}
+                    {!project.link.includes("github.com") && !project.liveLink && (
+                      <a
+                        href={project.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="p-2 text-muted-foreground hover:text-primary transition-colors"
+                        title="Live App"
                       >
                         <ExternalLink size={20} />
                       </a>
