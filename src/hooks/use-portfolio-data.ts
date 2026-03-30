@@ -32,6 +32,7 @@ export interface Certification {
   name: string;
   issuer: string;
   year: string;
+  credentialId?: string;
 }
 
 export function usePortfolioData() {
@@ -163,6 +164,7 @@ export function usePortfolioData() {
     { name: "AWS Certified Developer, Associate - DVA-C02", issuer: "AWS", year: "2023" },
     { name: "Green Software for Practitioners - LFC131", issuer: "Linux Foundation", year: "2023" },
     { name: "Client Value Creation Award, Best People Award", issuer: "Accenture", year: "2022" },
+    { name: "Blockchain Essentials", issuer: "Pluralsight", year: "2021", credentialId: "REP ID 4127" },
   ];
 
   const projects: Project[] = [
