@@ -1,6 +1,6 @@
 import { FadeIn } from "./FadeIn";
 import { usePortfolioData } from "@/hooks/use-portfolio-data";
-import { MapPin, Briefcase, Mail } from "lucide-react";
+import { MapPin, Briefcase, Mail, Download } from "lucide-react";
 import { motion } from "framer-motion";
 
 export function Hero() {
@@ -70,6 +70,14 @@ export function Hero() {
               className="px-8 py-4 rounded-xl font-bold glass hover:bg-white/10 hover:-translate-y-1 transition-all duration-300"
             >
               Contact Me
+            </a>
+            <a
+              href={`${import.meta.env.BASE_URL}Dhanush_Mathivanan_Resume.pdf`}
+              download="Dhanush_Mathivanan_Resume.pdf"
+              className="group flex items-center gap-2 px-8 py-4 rounded-xl font-bold border border-primary/40 text-primary hover:bg-primary/10 hover:border-primary hover:-translate-y-1 transition-all duration-300"
+            >
+              <Download size={18} className="group-hover:animate-bounce" />
+              Resume
             </a>
           </FadeIn>
         </div>
