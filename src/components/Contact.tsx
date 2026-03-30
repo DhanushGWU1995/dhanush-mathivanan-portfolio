@@ -1,7 +1,7 @@
 import { FadeIn } from "./FadeIn";
 import { SectionHeader } from "./SectionHeader";
 import { usePortfolioData } from "@/hooks/use-portfolio-data";
-import { Mail, Phone, Github, Linkedin, ArrowRight, Download } from "lucide-react";
+import { Mail, Phone, Github, Linkedin, ArrowRight, Download, Handshake } from "lucide-react";
 
 export function Contact() {
   const { personalInfo } = usePortfolioData();
@@ -72,11 +72,14 @@ export function Contact() {
 
         <FadeIn delay={0.3}>
           <div className="flex items-center justify-center gap-6">
-            <a href={personalInfo.github} target="_blank" rel="noopener noreferrer" className="p-4 glass rounded-full hover:bg-white hover:text-black transition-all duration-300 transform hover:-translate-y-2">
+            <a href={personalInfo.github} target="_blank" rel="noopener noreferrer" className="p-4 glass rounded-full hover:bg-white hover:text-black transition-all duration-300 transform hover:-translate-y-2" title="GitHub">
               <Github size={24} />
             </a>
-            <a href={personalInfo.linkedin} target="_blank" rel="noopener noreferrer" className="p-4 glass rounded-full hover:bg-[#0077b5] hover:text-white hover:border-[#0077b5] transition-all duration-300 transform hover:-translate-y-2">
+            <a href={personalInfo.linkedin} target="_blank" rel="noopener noreferrer" className="p-4 glass rounded-full hover:bg-[#0077b5] hover:text-white hover:border-[#0077b5] transition-all duration-300 transform hover:-translate-y-2" title="LinkedIn">
               <Linkedin size={24} />
+            </a>
+            <a href={personalInfo.handshake} target="_blank" rel="noopener noreferrer" className="p-4 glass rounded-full hover:bg-[#E8475F] hover:text-white hover:border-[#E8475F] transition-all duration-300 transform hover:-translate-y-2" title="Handshake Profile">
+              <Handshake size={24} />
             </a>
           </div>
         </FadeIn>
