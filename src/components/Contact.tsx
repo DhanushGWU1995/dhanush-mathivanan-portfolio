@@ -1,7 +1,7 @@
 import { FadeIn } from "./FadeIn";
 import { SectionHeader } from "./SectionHeader";
 import { usePortfolioData } from "@/hooks/use-portfolio-data";
-import { Mail, Phone, Github, Linkedin, ArrowRight, Download, Handshake } from "lucide-react";
+import { Mail, Phone, Github, Linkedin, ArrowRight, Download, Handshake, PenSquare } from "lucide-react";
 
 export function Contact() {
   const { personalInfo } = usePortfolioData();
@@ -80,6 +80,9 @@ export function Contact() {
             </a>
             <a href={personalInfo.handshake} target="_blank" rel="noopener noreferrer" className="p-4 glass rounded-full hover:bg-[#E8475F] hover:text-white hover:border-[#E8475F] transition-all duration-300 transform hover:-translate-y-2" title="Handshake Profile">
               <Handshake size={24} />
+            </a>
+            <a href={personalInfo.blog} target="_blank" rel="noopener noreferrer" className="p-4 glass rounded-full hover:bg-[#FF5722] hover:text-white hover:border-[#FF5722] transition-all duration-300 transform hover:-translate-y-2" title="Tech Blog">
+              <PenSquare size={24} />
             </a>
           </div>
         </FadeIn>
