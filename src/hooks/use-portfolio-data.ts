@@ -173,6 +173,13 @@ export function usePortfolioData() {
       link: "https://github.com/DhanushGWU1995/6202-machine-learning-project",
       liveLink: "https://huggingface.co/spaces/DhanushGWU1995/ECRIS",
       tags: ["NLP", "DistilBERT", "T5", "Hugging Face", "Streamlit", "Python", "CFPB Dataset"]
+    },
+    {
+      title: "US Unemployment vs Job Postings Analysis",
+      year: "2026",
+      description: "Interactive Tableau dashboard exploring the relationship between US unemployment rates and job postings across five key economic sectors — Information Technology, Finance & Insurance, Professional & Business Services, Manufacturing, and Non-Farming. Integrates Kaggle's state-level unemployment data with FRED/BLS job posting series to reveal sector-specific hiring trends and economic patterns.",
+      link: "https://github.com/DhanushGWU1995/6401-data-visualization-project",
+      tags: ["Tableau", "Data Visualization", "FRED / BLS", "Kaggle", "Labor Economics", "Dashboard Design"]
     }
   ];
 
