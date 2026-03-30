@@ -180,6 +180,13 @@ export function usePortfolioData() {
       description: "Interactive Tableau dashboard exploring the relationship between US unemployment rates and job postings across five key economic sectors — Information Technology, Finance & Insurance, Professional & Business Services, Manufacturing, and Non-Farming. Integrates Kaggle's state-level unemployment data with FRED/BLS job posting series to reveal sector-specific hiring trends and economic patterns.",
       link: "https://github.com/DhanushGWU1995/6401-data-visualization-project",
       tags: ["Tableau", "Data Visualization", "FRED / BLS", "Kaggle", "Labor Economics", "Dashboard Design"]
+    },
+    {
+      title: "Role Matrix — AI-Powered Resume Screening System",
+      year: "2026",
+      description: "An AI-powered hiring intelligence platform that moves beyond keyword matching to evaluate real skills, projects, and experience. Processes multiple PDF/DOCX resumes simultaneously, extracts 300+ technical and soft skills, scores candidates against job descriptions with a confidence formula, and auto-categorizes them as Interview, Maybe, or Not Now. Surfaces alternate role suggestions for low-match candidates and exports structured JSON profiles via a color-coded Streamlit dashboard.",
+      link: "https://github.com/DhanushGWU1995/role-matrix",
+      tags: ["Python", "Streamlit", "NLP", "Skill Extraction", "Resume Parsing", "AI Hiring", "PDF/DOCX Processing"]
     }
   ];
 
