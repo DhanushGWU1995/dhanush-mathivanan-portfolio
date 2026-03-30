@@ -196,6 +196,14 @@ export function usePortfolioData() {
       tags: ["Python", "CatBoost", "Flask", "Angular 16", "CDC BRFSS", "Data Mining", "Health Analytics", "REST API"]
     },
     {
+      title: "AI Course Creator — Multi-Agent GCP System",
+      year: "2024",
+      description: "A multi-agent AI application deployed on Google Cloud Run that turns any topic into a fully structured course in seconds. An orchestrated squad of specialized AI agents works in sequence — a Researcher gathers and synthesizes information, a Fact-Checker validates accuracy, and a Writer produces polished, comprehensive course content. Built and deployed on Google Cloud Platform using Cloud Run for serverless scalability.",
+      link: "https://course-creator-626594108279.us-central1.run.app/",
+      liveLink: "https://course-creator-626594108279.us-central1.run.app/",
+      tags: ["Google Cloud", "Cloud Run", "Multi-Agent AI", "Generative AI", "GCP", "Serverless", "Python"]
+    },
+    {
       title: "PartSelect AI Chat Assistant",
       year: "2025",
       description: "An intelligent e-commerce chatbot for an appliance parts platform, helping customers find compatible refrigerator and dishwasher parts, get installation instructions, and troubleshoot issues in real time. Features intent classification, context-aware responses, and entity extraction (part numbers, model numbers). Supports swappable AI backends — DeepSeek, OpenAI GPT, or a built-in Mock AI mode requiring no API key. Built with Angular 17 (standalone components), Node.js/Express API, and an SQLite database storing parts, compatibility mappings, installation guides, and chat history.",
