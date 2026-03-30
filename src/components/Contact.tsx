@@ -1,7 +1,7 @@
 import { FadeIn } from "./FadeIn";
 import { SectionHeader } from "./SectionHeader";
 import { usePortfolioData } from "@/hooks/use-portfolio-data";
-import { Mail, Phone, Github, Linkedin, ArrowRight } from "lucide-react";
+import { Mail, Phone, Github, Linkedin, ArrowRight, Download } from "lucide-react";
 
 export function Contact() {
   const { personalInfo } = usePortfolioData();
@@ -25,7 +25,7 @@ export function Contact() {
           </p>
         </FadeIn>
 
-        <FadeIn delay={0.2} className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-16">
+        <FadeIn delay={0.2} className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-16 flex-wrap">
           <a 
             href={`mailto:${personalInfo.email}`}
             className="group flex items-center justify-between w-full sm:w-auto min-w-[280px] px-6 py-4 glass-card rounded-xl hover:bg-primary/10 hover:border-primary/50 transition-all duration-300"
@@ -52,6 +52,21 @@ export function Contact() {
               </div>
             </div>
             <ArrowRight size={18} className="text-secondary opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
+          </a>
+
+          <a 
+            href={`${import.meta.env.BASE_URL}Dhanush_Mathivanan_Resume.pdf`}
+            download="Dhanush_Mathivanan_Resume.pdf"
+            className="group flex items-center justify-between w-full sm:w-auto min-w-[280px] px-6 py-4 glass-card rounded-xl hover:bg-accent/10 hover:border-accent/50 transition-all duration-300"
+          >
+            <div className="flex items-center gap-4">
+              <Download className="text-accent group-hover:scale-110 group-hover:animate-bounce transition-transform" />
+              <div className="text-left">
+                <div className="text-xs text-muted-foreground uppercase tracking-wider mb-1">Download</div>
+                <div className="font-medium text-foreground">My Resume</div>
+              </div>
+            </div>
+            <ArrowRight size={18} className="text-accent opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
           </a>
         </FadeIn>
 
