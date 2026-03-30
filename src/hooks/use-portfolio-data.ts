@@ -46,7 +46,7 @@ export function usePortfolioData() {
     linkedin: "https://linkedin.com/",
     handshake: "https://gwu.joinhandshake.com/profiles/5kmn84",
     blog: "https://techwithdhanush.blogspot.com/",
-    summary: "Data Science graduate student at The George Washington University, specializing in Machine Learning, Deep Learning, NLP, and Generative AI. AWS Certified cloud engineer with 9.5+ years of experience building distributed microservices, event-driven architectures, and scalable serverless data platforms on AWS for global enterprise systems. Proficient full-stack engineer with deep expertise in Angular, Node.js, and JavaScript, backed by strong database mastery across DynamoDB and MySQL. Skilled in end-to-end CI/CD pipeline automation using GitHub Actions runners, Infrastructure-as-Code with Terraform for serverless cloud deployments, and developing production-ready ML pipelines using TensorFlow, Scikit-Learn, and FastAPI."
+    summary: "Data Science graduate student at The George Washington University, specializing in Machine Learning, Deep Learning, NLP, and Generative AI. Experienced in building end-to-end ML pipelines using Python, TensorFlow, Scikit-Learn, Hugging Face, and FastAPI. AWS Certified cloud engineer with 9.5+ years of experience building distributed microservices, event-driven architectures, and scalable serverless data platforms on AWS for global enterprise systems. Proficient full-stack engineer with deep expertise in Angular, Node.js, and JavaScript, backed by strong database mastery across DynamoDB and MySQL. Skilled in end-to-end CI/CD pipeline automation using GitHub Actions runners and Infrastructure-as-Code with Terraform for serverless cloud deployments."
   };
 
   const skills: SkillCategory[] = [
