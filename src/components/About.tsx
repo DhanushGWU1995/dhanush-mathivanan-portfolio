@@ -28,7 +28,7 @@ export function About() {
                 
                 <div className="mt-8 pt-8 border-t border-white/10 grid grid-cols-2 md:grid-cols-4 gap-6">
                   <div>
-                    <div className="text-3xl font-bold text-primary font-display mb-1">9+</div>
+                    <div className="text-3xl font-bold text-primary font-display mb-1">9.5+</div>
                     <div className="text-sm text-muted-foreground">Years Exp.</div>
                   </div>
                   <div>
