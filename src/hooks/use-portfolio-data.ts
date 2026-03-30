@@ -194,6 +194,13 @@ export function usePortfolioData() {
       description: "Full-stack web app predicting general health outcomes from 17 socioeconomic and lifestyle factors using a CatBoost classifier trained on 400,000+ CDC BRFSS 2024 survey responses. Top predictors include mental health days (13.7%), BMI (10.1%), income (9.4%), and employment status (7.9%). Achieves ~78% accuracy and AUC-ROC of 0.85. Built with an Angular 16 frontend and a Flask REST API backend, featuring a multi-step assessment form with real-time health risk feedback.",
       link: "https://github.com/DhanushGWU1995/6103-data-mining-project",
       tags: ["Python", "CatBoost", "Flask", "Angular 16", "CDC BRFSS", "Data Mining", "Health Analytics", "REST API"]
+    },
+    {
+      title: "PartSelect AI Chat Assistant",
+      year: "2025",
+      description: "An intelligent e-commerce chatbot for an appliance parts platform, helping customers find compatible refrigerator and dishwasher parts, get installation instructions, and troubleshoot issues in real time. Features intent classification, context-aware responses, and entity extraction (part numbers, model numbers). Supports swappable AI backends — DeepSeek, OpenAI GPT, or a built-in Mock AI mode requiring no API key. Built with Angular 17 (standalone components), Node.js/Express API, and an SQLite database storing parts, compatibility mappings, installation guides, and chat history.",
+      link: "https://github.com/DhanushGWU1995/sample-chat-bot",
+      tags: ["TypeScript", "Angular 17", "Node.js", "Express", "SQLite", "DeepSeek", "OpenAI", "Chatbot", "NLP"]
     }
   ];
 
