@@ -39,7 +39,7 @@ export function Hero() {
 
           <FadeIn delay={0.3}>
             <p className="text-xl md:text-2xl text-muted-foreground font-light mb-8 max-w-xl">
-              {personalInfo.title} with 9+ years of experience building scalable architectures and intelligent systems.
+              {personalInfo.title} with 9.5+ years of experience building scalable architectures and intelligent systems.
             </p>
           </FadeIn>
 
@@ -50,7 +50,7 @@ export function Hero() {
             </div>
             <div className="flex items-center gap-2">
               <Briefcase size={18} className="text-secondary" />
-              <span>9+ Years Experience</span>
+              <span>9.5+ Years Experience</span>
             </div>
             <div className="flex items-center gap-2">
               <Mail size={18} className="text-accent" />
