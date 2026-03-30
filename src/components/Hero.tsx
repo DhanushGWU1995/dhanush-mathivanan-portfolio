@@ -39,7 +39,7 @@ export function Hero() {
 
           <FadeIn delay={0.3}>
             <p className="text-xl md:text-2xl text-muted-foreground font-light mb-8 max-w-xl">
-              AI/ML Engineer with 9.5+ years of experience building intelligent systems, deep learning models, and scalable data-driven applications.
+              Cloud &amp; Full-Stack Engineer with 9.5+ years of experience, now specializing in Machine Learning, Deep Learning &amp; Data Analytics.
             </p>
           </FadeIn>
 
