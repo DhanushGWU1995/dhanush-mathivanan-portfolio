@@ -24,6 +24,8 @@ export interface Project {
   year: string;
   description: string;
   link: string;
+  liveLink?: string;
+  tags?: string[];
 }
 
 export interface Certification {
@@ -165,16 +167,12 @@ export function usePortfolioData() {
 
   const projects: Project[] = [
     {
-      title: "Heart Disease Prediction (US CDC Survey Data)",
-      year: "2024",
-      description: "Machine Learning Trained Predictor with an interactive Web App interface to analyze heart disease risk factors.",
-      link: "https://github.com/"
-    },
-    {
-      title: "Health Status Prediction (Income Factors)",
-      year: "2024",
-      description: "ML classification model predicting health status based on income factors in US Population CDC Survey Data.",
-      link: "https://github.com/"
+      title: "Enterprise Customer Risk Intelligence System (ECRIS)",
+      year: "2026",
+      description: "A real-time NLP application that automatically analyzes and prioritizes customer complaints using DistilBERT for complaint classification and T5 for automated response generation. Processes CFPB consumer finance complaints with sentiment analysis, urgency detection, and escalation risk scoring. Achieves ~85–90% accuracy with a weighted F1 of ~0.87, deployed as an interactive Streamlit dashboard on Hugging Face Spaces.",
+      link: "https://github.com/DhanushGWU1995/6202-machine-learning-project",
+      liveLink: "https://huggingface.co/spaces/DhanushGWU1995/ECRIS",
+      tags: ["NLP", "DistilBERT", "T5", "Hugging Face", "Streamlit", "Python", "CFPB Dataset"]
     }
   ];
 
