@@ -197,7 +197,7 @@ export function usePortfolioData() {
     },
     {
       title: "AI Course Creator — Multi-Agent GCP System",
-      year: "2024",
+      year: "2026",
       description: "A multi-agent AI application deployed on Google Cloud Run that turns any topic into a fully structured course in seconds. An orchestrated squad of specialized AI agents works in sequence — a Researcher gathers and synthesizes information, a Fact-Checker validates accuracy, and a Writer produces polished, comprehensive course content. Built and deployed on Google Cloud Platform using Cloud Run for serverless scalability.",
       link: "https://course-creator-626594108279.us-central1.run.app/",
       liveLink: "https://course-creator-626594108279.us-central1.run.app/",
