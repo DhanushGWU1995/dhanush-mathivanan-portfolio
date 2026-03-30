@@ -187,6 +187,13 @@ export function usePortfolioData() {
       description: "An AI-powered hiring intelligence platform that moves beyond keyword matching to evaluate real skills, projects, and experience. Processes multiple PDF/DOCX resumes simultaneously, extracts 300+ technical and soft skills, scores candidates against job descriptions with a confidence formula, and auto-categorizes them as Interview, Maybe, or Not Now. Surfaces alternate role suggestions for low-match candidates and exports structured JSON profiles via a color-coded Streamlit dashboard.",
       link: "https://github.com/DhanushGWU1995/role-matrix",
       tags: ["Python", "Streamlit", "NLP", "Skill Extraction", "Resume Parsing", "AI Hiring", "PDF/DOCX Processing"]
+    },
+    {
+      title: "Health Status Predictor — CDC BRFSS Data Mining",
+      year: "2025",
+      description: "Full-stack web app predicting general health outcomes from 17 socioeconomic and lifestyle factors using a CatBoost classifier trained on 400,000+ CDC BRFSS 2024 survey responses. Top predictors include mental health days (13.7%), BMI (10.1%), income (9.4%), and employment status (7.9%). Achieves ~78% accuracy and AUC-ROC of 0.85. Built with an Angular 16 frontend and a Flask REST API backend, featuring a multi-step assessment form with real-time health risk feedback.",
+      link: "https://github.com/DhanushGWU1995/6103-data-mining-project",
+      tags: ["Python", "CatBoost", "Flask", "Angular 16", "CDC BRFSS", "Data Mining", "Health Analytics", "REST API"]
     }
   ];
 
