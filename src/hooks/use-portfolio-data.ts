@@ -45,6 +45,7 @@ export function usePortfolioData() {
     github: "https://github.com/",
     linkedin: "https://linkedin.com/",
     handshake: "https://gwu.joinhandshake.com/profiles/5kmn84",
+    blog: "https://techwithdhanush.blogspot.com/",
     summary: "Data Science graduate student at The George Washington University, specializing in Machine Learning, Deep Learning, NLP, Generative AI, and large-scale data systems. AWS Certified cloud engineer with 9.5+ years of experience building distributed microservices, event-driven architectures, and scalable serverless data platforms on AWS for global enterprise systems, Fullstack web application development. Experienced in developing end-to-end machine learning pipelines using TensorFlow, Scikit-Learn, and FastAPI."
   };
 
