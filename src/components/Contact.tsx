@@ -55,8 +55,8 @@ export function Contact() {
           </a>
 
           <a 
-            href={`${import.meta.env.BASE_URL}Dhanush_Mathivanan_Resume.pdf`}
-            download="Dhanush_Mathivanan_Resume.pdf"
+            href={`${import.meta.env.BASE_URL}Dhanush_Resume_2026_Updated.pdf`}
+            download="Dhanush_Resume_2026_Updated.pdf"
             className="group flex items-center justify-between w-full sm:w-auto min-w-[280px] px-6 py-4 glass-card rounded-xl hover:bg-accent/10 hover:border-accent/50 transition-all duration-300"
           >
             <div className="flex items-center gap-4">
