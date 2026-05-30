@@ -160,6 +160,7 @@ export function usePortfolioData() {
   ];
 
   const certifications: Certification[] = [
+    { name: "Phi Delta Gamma Scholarship recipient", issuer: "George Washington University", year: "2026"},
     { name: "Global Leaders Fellowship recipient", issuer: "George Washington University", year: "2025" },
     { name: "Introduction to R", issuer: "DataCamp", year: "2025" },
     { name: "AWS Certified Solutions Architect, Associate - SAA-C03", issuer: "AWS", year: "2024" },
