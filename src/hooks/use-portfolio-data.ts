@@ -42,7 +42,7 @@ export function usePortfolioData() {
     location: "Arlington, VA",
     phone: "240-385-2816",
     email: "dhanush.mathivanan@gwu.edu",
-    github: "https://github.com/",
+    github: "https://github.com/DhanushGWU1995",
     linkedin: "https://linkedin.com/",
     handshake: "https://gwu.joinhandshake.com/profiles/5kmn84",
     blog: "https://techwithdhanush.blogspot.com/",
