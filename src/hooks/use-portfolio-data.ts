@@ -46,7 +46,7 @@ export function usePortfolioData() {
     linkedin: "https://www.linkedin.com/in/dhanush-mathivanan-a65202120/",
     handshake: "https://gwu.joinhandshake.com/profiles/5kmn84",
     blog: "https://techwithdhanush.blogspot.com/",
-    summary: "Data Science graduate student at The George Washington University, specializing in data and cloud engineering, machine learning, deep learning, NLP, generative AI, and large-scale data systems. AWS certified cloud engineer with 9.7+ years building distributed microservices, event-driven architectures, and serverless data platforms on AWS for global enterprises, plus full-stack applications in TypeScript, Node.js, and Angular. Recent work includes grounded LLM assistants that answer only from retrieved source text, using hybrid search, Qwen2.5, and an entailment check that withholds unsupported procedures."
+    summary: "Data Science graduate student and Technical AWS Support Assistant at The George Washington University, specializing in data and cloud engineering, machine learning, deep learning, NLP, generative AI, and large-scale data systems. AWS certified cloud engineer with 9.7+ years building distributed microservices, event-driven architectures, and serverless data platforms on AWS for global enterprises, plus full-stack applications in TypeScript, Node.js, and Angular. Recent work includes grounded LLM assistants that answer only from retrieved source text, using hybrid search, Qwen2.5, and an entailment check that withholds unsupported procedures."
   };
 
   const skills: SkillCategory[] = [
