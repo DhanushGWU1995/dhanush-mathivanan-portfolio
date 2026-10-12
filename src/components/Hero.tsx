@@ -39,7 +39,7 @@ export function Hero() {
 
           <FadeIn delay={0.3}>
             <p className="text-xl md:text-2xl text-muted-foreground font-light mb-8 max-w-xl">
-              Data science graduate student and AWS certified cloud engineer with 9.7+ years building serverless platforms, full-stack systems, and grounded LLM assistants.
+              Data science graduate student and AWS certified cloud professional with 9.8+ years building serverless data platforms, full-stack systems, and grounded LLM assistants.
             </p>
           </FadeIn>
 
