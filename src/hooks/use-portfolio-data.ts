@@ -198,7 +198,7 @@ export function usePortfolioData() {
     {
       title: "Torque Diagnostics — Grounded Manual Assistant",
       year: "2026",
-      description: "Technician assistant for ABB drive manuals. Hybrid search (BM25 plus BAAI/bge-base-en-v1.5) retrieves the top pages, Qwen2.5-7B-Instruct drafts an answer, and a DeBERTa entailment model keeps a claim only when a manual line supports it. Unsupported procedures are withheld instead of invented. The repository is private while the manual library stays off the public internet.",
+      description: "Technician assistant for ABB drive manuals. Hybrid search (BM25 plus BAAI/bge-base-en-v1.5) retrieves the top pages, Qwen2.5-7B-Instruct drafts an answer, and a DeBERTa entailment model keeps a claim only when a manual line supports it. Unsupported procedures are withheld instead of invented. This project is still in progress.",
       link: "https://github.com/DhanushGWU1995/torque-diagnostics",
       tags: ["LLMs", "RAG", "Qwen2.5", "DeBERTa", "BM25", "BGE Embeddings", "DuckDB", "Polars", "AWS S3"]
     },
