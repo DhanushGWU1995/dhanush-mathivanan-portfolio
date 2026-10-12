@@ -39,7 +39,7 @@ export function Hero() {
 
           <FadeIn delay={0.3}>
             <p className="text-xl md:text-2xl text-muted-foreground font-light mb-8 max-w-xl">
-              Aspiring Data Science &amp; AI/ML Engineer — Cloud Certified Professional with 9.5+ years of Full-Stack experience building scalable architectures and intelligent systems.
+              Data science graduate student and AWS certified cloud engineer with 9.7+ years building serverless platforms, full-stack systems, and grounded LLM assistants.
             </p>
           </FadeIn>
 
@@ -50,7 +50,7 @@ export function Hero() {
             </div>
             <div className="flex items-center gap-2">
               <Briefcase size={18} className="text-secondary" />
-              <span>9.5+ Years Experience</span>
+              <span>9.7+ Years Experience</span>
             </div>
             <div className="flex items-center gap-2">
               <Mail size={18} className="text-accent" />
