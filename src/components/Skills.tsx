@@ -1,10 +1,11 @@
 import { FadeIn } from "./FadeIn";
 import { SectionHeader } from "./SectionHeader";
 import { usePortfolioData, SkillCategory } from "@/hooks/use-portfolio-data";
-import { Code, Database, Cloud, Wrench, LayoutTemplate, BrainCircuit, Activity } from "lucide-react";
+import { Code, Database, Cloud, Wrench, LayoutTemplate, BrainCircuit, Activity, Sparkles } from "lucide-react";
 
 const categoryIcons: Record<string, React.ElementType> = {
   "Programming": Code,
+  "LLMs & Generative AI": Sparkles,
   "Machine Learning": BrainCircuit,
   "Web Frameworks": LayoutTemplate,
   "Databases": Database,

@@ -43,28 +43,32 @@ export function usePortfolioData() {
     phone: "240-385-2816",
     email: "dhanush.mathivanan@gwu.edu",
     github: "https://github.com/DhanushGWU1995",
-    linkedin: "https://linkedin.com/",
+    linkedin: "https://www.linkedin.com/in/dhanush-mathivanan-a65202120/",
     handshake: "https://gwu.joinhandshake.com/profiles/5kmn84",
     blog: "https://techwithdhanush.blogspot.com/",
-    summary: "Data Science graduate student at The George Washington University, specializing in Machine Learning, Deep Learning, NLP, and Generative AI. Experienced in building end-to-end ML pipelines using Python, TensorFlow, Scikit-Learn, Hugging Face, and FastAPI. AWS Certified cloud engineer with 9.5+ years of experience building distributed microservices, event-driven architectures, and scalable serverless data platforms on AWS for global enterprise systems. Proficient full-stack engineer with deep expertise in Angular, Node.js, and JavaScript, backed by strong database mastery across DynamoDB and MySQL. Skilled in end-to-end CI/CD pipeline automation using GitHub Actions runners and Infrastructure-as-Code with Terraform for serverless cloud deployments."
+    summary: "Data Science graduate student at The George Washington University, specializing in data and cloud engineering, machine learning, deep learning, NLP, generative AI, and large-scale data systems. AWS certified cloud engineer with 9.7+ years building distributed microservices, event-driven architectures, and serverless data platforms on AWS for global enterprises, plus full-stack applications in TypeScript, Node.js, and Angular. Recent work includes grounded LLM assistants that answer only from retrieved source text, using hybrid search, Qwen2.5, and an entailment check that withholds unsupported procedures."
   };
 
   const skills: SkillCategory[] = [
     {
       name: "Programming",
-      skills: ["Python", "R Studio", "SQL", "TypeScript", "JavaScript", "ActionScript"]
+      skills: ["Python", "SQL", "TypeScript", "JavaScript", "Linux", "R Studio", "ActionScript"]
+    },
+    {
+      name: "LLMs & Generative AI",
+      skills: ["RAG", "Qwen2.5", "BGE Embeddings", "BM25", "DeBERTa", "Hugging Face", "DistilBERT", "T5"]
     },
     {
       name: "Machine Learning",
-      skills: ["TensorFlow", "Scikit-Learn", "Hugging Face", "Matplotlib", "Seaborn"]
+      skills: ["TensorFlow", "Scikit-Learn", "Pandas", "Polars", "Matplotlib", "Seaborn"]
     },
     {
       name: "Web Frameworks",
-      skills: ["Node.js", "Express.js", "Angular", "FastAPI", "Streamlit", "Terraform", "Electron", "Redis", "Ngrx Redux"]
+      skills: ["Node.js", "Express.js", "Angular", "FastAPI", "Streamlit", "Kafka", "Terraform", "Electron", "Redis", "Ngrx Redux"]
     },
     {
       name: "Databases",
-      skills: ["DynamoDB", "MySQL", "MongoDB", "SQLite"]
+      skills: ["DynamoDB", "MySQL", "MongoDB", "SQLite", "DuckDB"]
     },
     {
       name: "Cloud & DevOps",
@@ -80,11 +84,31 @@ export function usePortfolioData() {
     },
     {
       name: "Tools & Version Control",
-      skills: ["Git", "SVN", "Tableau Desktop", "VS-Code", "PyCharm"]
+      skills: ["Git", "SVN", "Tableau Desktop", "VS Code", "PyCharm", "PySpark"]
     }
   ];
 
   const experience: Experience[] = [
+    {
+      company: "The George Washington University",
+      role: "Technical Support Assistant",
+      duration: "Aug 2026 - Present",
+      highlights: [
+        "Support campus voice, collaboration, and physical security systems, integrating unified communications, networking, and AWS services",
+        "Triage Splunk alerts for phishing, suspicious logins, anomalous geolocation, and compromised accounts",
+        "Support the migration of 1,000+ users from Cisco CUCM to Zoom Phone and E911 validation for 400+ voice devices"
+      ]
+    },
+    {
+      company: "Probability Solutions LLC",
+      role: "Data Science Intern",
+      duration: "Jun 2026 - Aug 2026",
+      highlights: [
+        "Studied binary search tree algorithms and how they apply to modern database engines",
+        "Built prototypes and measured tree-based algorithms on large inputs",
+        "Compared search, insert, delete, and update cost across search-tree implementations"
+      ]
+    },
     {
       company: "Bosch Global Software Technologies",
       client: "MHP Porsche (Audi AG), Germany",
@@ -145,10 +169,10 @@ export function usePortfolioData() {
   const education: Education[] = [
     {
       institution: "The George Washington University",
-      location: "Washington DC",
+      location: "Washington, DC",
       degree: "Master of Science in Data Science",
       duration: "Aug 2025 - May 2027",
-      coursework: "Data Analytics, Machine Learning, Deep Learning, NLP, Data Warehousing"
+      coursework: "Big Data Analytics, Cloud Computing, Machine Learning, Deep Learning, NLP, Data Warehousing"
     },
     {
       institution: "Anna University",
@@ -160,7 +184,7 @@ export function usePortfolioData() {
   ];
 
   const certifications: Certification[] = [
-    { name: "Phi Delta Gamma Scholarship recipient", issuer: "George Washington University", year: "2026"},
+    { name: "Phi Delta Gamma Fellowship recipient", issuer: "George Washington University", year: "2026"},
     { name: "Global Leaders Fellowship recipient", issuer: "George Washington University", year: "2025" },
     { name: "Introduction to R", issuer: "DataCamp", year: "2025" },
     { name: "AWS Certified Solutions Architect, Associate - SAA-C03", issuer: "AWS", year: "2024" },
@@ -171,6 +195,13 @@ export function usePortfolioData() {
   ];
 
   const projects: Project[] = [
+    {
+      title: "Torque Diagnostics — Grounded Manual Assistant",
+      year: "2026",
+      description: "Technician assistant for ABB drive manuals. Hybrid search (BM25 plus BAAI/bge-base-en-v1.5) retrieves the top pages, Qwen2.5-7B-Instruct drafts an answer, and a DeBERTa entailment model keeps a claim only when a manual line supports it. Unsupported procedures are withheld instead of invented. The repository is private while the manual library stays off the public internet.",
+      link: "https://github.com/DhanushGWU1995/torque-diagnostics",
+      tags: ["LLMs", "RAG", "Qwen2.5", "DeBERTa", "BM25", "BGE Embeddings", "DuckDB", "Polars", "AWS S3"]
+    },
     {
       title: "Enterprise Customer Risk Intelligence System (ECRIS)",
       year: "2026",
@@ -195,10 +226,18 @@ export function usePortfolioData() {
     },
     {
       title: "Health Status Predictor — CDC BRFSS Data Mining",
-      year: "2025",
+      year: "2024",
       description: "Full-stack web app predicting general health outcomes from 17 socioeconomic and lifestyle factors using a CatBoost classifier trained on 400,000+ CDC BRFSS 2024 survey responses. Top predictors include mental health days (13.7%), BMI (10.1%), income (9.4%), and employment status (7.9%). Achieves ~78% accuracy and AUC-ROC of 0.85. Built with an Angular 16 frontend and a Flask REST API backend, featuring a multi-step assessment form with real-time health risk feedback.",
       link: "https://github.com/DhanushGWU1995/6103-data-mining-project",
       tags: ["Python", "CatBoost", "Flask", "Angular 16", "CDC BRFSS", "Data Mining", "Health Analytics", "REST API"]
+    },
+    {
+      title: "Heart Disease Predictor — CDC BRFSS",
+      year: "2024",
+      description: "Coronary heart disease predictor trained on U.S. CDC BRFSS survey responses. The pipeline covers cleanup of the annual LLCP extract in R and Python and a deployed scoring app for the trained model.",
+      link: "https://github.com/DhanushGWU1995/6101-mid-term-project",
+      liveLink: "https://dhanushgwu1995.github.io/6101-mid-term-project/predict",
+      tags: ["Python", "R", "CDC BRFSS", "Classification", "Predictive Modeling"]
     },
     {
       title: "AI Course Creator — Multi-Agent GCP System",
