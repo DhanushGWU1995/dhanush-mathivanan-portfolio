@@ -9,8 +9,7 @@
       content="Dhanush Mathivanan: M.S. Data Science at George Washington University (Spring 2027) with 9+ years building AWS data pipelines and backend systems. Machine learning, deep learning, RAG, and cloud. Open to full-time roles."
     />
     <meta name="author" content="Dhanush Mathivanan" />
-    <meta name="theme-color" content="#f7f8fa" media="(prefers-color-scheme: light)" />
-    <meta name="theme-color" content="#0b0f17" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#f7f8fa" />
     <link rel="canonical" href="https://dhanushgwu1995.github.io/dhanush-mathivanan-portfolio/" />
 
     <meta property="og:type" content="profile" />
@@ -35,8 +34,7 @@
 
     <script>
       try {
-        var t = localStorage.getItem("theme");
-        if (t === "dark" || (!t && matchMedia("(prefers-color-scheme: dark)").matches)) {
+        if (localStorage.getItem("theme") === "dark") {
           document.documentElement.classList.add("dark");
         }
       } catch (e) {}
