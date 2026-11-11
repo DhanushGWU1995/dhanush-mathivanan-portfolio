@@ -1,54 +1,55 @@
-import { FadeIn } from "./FadeIn";
-import { SectionHeader } from "./SectionHeader";
-import { usePortfolioData } from "@/hooks/use-portfolio-data";
-import { Terminal } from "lucide-react";
+import { Brain, Cloud, Code2, Database, Sparkles, type LucideIcon } from "lucide-react";
+import { focusAreas, profile, quickFacts } from "@/data/portfolio";
+import { Reveal } from "./Reveal";
+import { Section } from "./Section";
+
+const icons: Record<string, LucideIcon> = {
+  database: Database,
+  sparkles: Sparkles,
+  brain: Brain,
+  cloud: Cloud,
+  code: Code2,
+};
 
 export function About() {
-  const { personalInfo } = usePortfolioData();
-
   return (
-    <section id="about" className="py-24 relative">
-      <div className="max-w-7xl mx-auto px-6 md:px-12">
-        <SectionHeader title="About Me" subtitle="A brief introduction to who I am and what I do." />
-        
-        <FadeIn>
-          <div className="glass-card rounded-2xl p-8 md:p-12 relative overflow-hidden group">
-            <div className="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-[80px] group-hover:bg-primary/10 transition-colors duration-700" />
-            
-            <div className="relative z-10 flex flex-col md:flex-row gap-8 items-start">
-              <div className="shrink-0 p-4 glass rounded-2xl text-primary">
-                <Terminal size={48} strokeWidth={1.5} />
+    <Section id="about" eyebrow="About" title="Engineer first, now a data scientist too">
+      <div className="grid gap-6 lg:grid-cols-[1.4fr_1fr]">
+        <Reveal className="card p-7 md:p-9">
+          {profile.about.map((p) => (
+            <p key={p.slice(0, 24)} className="mb-4 leading-relaxed text-muted last:mb-0">
+              {p}
+            </p>
+          ))}
+        </Reveal>
+
+        <Reveal delay={80} className="card p-7 md:p-8">
+          <h3 className="text-sm font-semibold">For recruiters</h3>
+          <dl className="mt-4 space-y-4">
+            {quickFacts.map((f) => (
+              <div key={f.label}>
+                <dt className="font-mono text-[11px] font-medium uppercase tracking-[0.16em] text-muted">{f.label}</dt>
+                <dd className="mt-1 text-sm font-medium">{f.value}</dd>
               </div>
-              
-              <div>
-                <h3 className="text-2xl font-display font-semibold mb-6 text-foreground">Professional Summary</h3>
-                <p className="text-lg text-muted-foreground leading-relaxed">
-                  {personalInfo.summary}
-                </p>
-                
-                <div className="mt-8 pt-8 border-t border-white/10 grid grid-cols-2 md:grid-cols-4 gap-6">
-                  <div>
-                    <div className="text-3xl font-bold text-primary font-display mb-1">9.7+</div>
-                    <div className="text-sm text-muted-foreground">Years Exp.</div>
-                  </div>
-                  <div>
-                    <div className="text-3xl font-bold text-secondary font-display mb-1">AWS</div>
-                    <div className="text-sm text-muted-foreground">2x Certified</div>
-                  </div>
-                  <div>
-                    <div className="text-3xl font-bold text-accent font-display mb-1">MS</div>
-                    <div className="text-sm text-muted-foreground">Data Science</div>
-                  </div>
-                  <div>
-                    <div className="text-3xl font-bold text-white font-display mb-1">LLMs</div>
-                    <div className="text-sm text-muted-foreground">Grounded RAG</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </FadeIn>
+            ))}
+          </dl>
+        </Reveal>
       </div>
-    </section>
+
+      <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
+        {focusAreas.map((area, i) => {
+          const Icon = icons[area.icon];
+          return (
+            <Reveal key={area.title} delay={i * 60} className="card p-5">
+              <div className="grid h-10 w-10 place-items-center rounded-xl bg-accent-soft text-accent">
+                <Icon size={20} />
+              </div>
+              <h3 className="mt-4 font-semibold">{area.title}</h3>
+              <p className="mt-1.5 text-sm leading-relaxed text-muted">{area.description}</p>
+            </Reveal>
+          );
+        })}
+      </div>
+    </Section>
   );
 }

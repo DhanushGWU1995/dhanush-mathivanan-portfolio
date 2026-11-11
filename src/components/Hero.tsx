@@ -1,121 +1,116 @@
-import { FadeIn } from "./FadeIn";
-import { usePortfolioData } from "@/hooks/use-portfolio-data";
-import { MapPin, Briefcase, Mail, Download } from "lucide-react";
-import { motion } from "framer-motion";
+import { ArrowRight, FileText, GraduationCap, Mail, MapPin } from "lucide-react";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { clients, profile, stats } from "@/data/portfolio";
+import { Reveal } from "./Reveal";
 
 export function Hero() {
-  const { personalInfo } = usePortfolioData();
-
   return (
-    <section id="top" className="relative min-h-screen flex items-center pt-20 overflow-hidden">
-      {/* Background Image / Effects */}
-      <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-background/80 backdrop-blur-sm z-10" />
-        <img
-          src={`${import.meta.env.BASE_URL}images/hero-bg.png`}
-          alt="Abstract futuristic background"
-          className="w-full h-full object-cover opacity-60 mix-blend-screen"
+    <section id="top" className="relative overflow-hidden pt-32 pb-16 md:pt-40 md:pb-24">
+      <div aria-hidden className="pointer-events-none absolute inset-0 -z-10">
+        <div className="absolute -top-40 left-1/2 h-[520px] w-[820px] -translate-x-1/2 rounded-full bg-accent/15 blur-[120px]" />
+        <div
+          className="absolute inset-0 opacity-[0.35] dark:opacity-[0.15]"
+          style={{
+            backgroundImage: "radial-gradient(var(--line) 1px, transparent 1px)",
+            backgroundSize: "22px 22px",
+            maskImage: "radial-gradient(ellipse at top, black 30%, transparent 70%)",
+          }}
         />
-        {/* Glow orb */}
-        <div className="absolute top-1/4 -right-1/4 w-[800px] h-[800px] bg-primary/20 rounded-full blur-[120px] mix-blend-screen pointer-events-none" />
-        <div className="absolute bottom-1/4 -left-1/4 w-[600px] h-[600px] bg-secondary/20 rounded-full blur-[100px] mix-blend-screen pointer-events-none" />
       </div>
 
-      <div className="max-w-7xl mx-auto px-6 md:px-12 w-full relative z-20 grid lg:grid-cols-2 gap-12 items-center">
-        <div>
-          <FadeIn delay={0.1}>
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass border-primary/30 text-primary text-sm font-medium mb-8 shadow-[0_0_20px_-5px_rgba(0,240,255,0.4)]">
-              <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-              Available for new opportunities
-            </div>
-          </FadeIn>
-          
-          <FadeIn delay={0.2}>
-            <h1 className="text-5xl md:text-7xl font-bold font-display leading-[1.1] mb-6">
-              Hi, I'm <br />
-              <span className="text-gradient block mt-2">{personalInfo.name}</span>
-            </h1>
-          </FadeIn>
+      <div className="mx-auto max-w-4xl px-5 text-center md:px-8">
+        <Reveal>
+          <img
+            src={profile.photo}
+            alt={`Portrait of ${profile.name}`}
+            width={144}
+            height={144}
+            className="mx-auto h-32 w-32 rounded-full object-cover ring-4 ring-surface shadow-xl md:h-36 md:w-36"
+          />
+        </Reveal>
 
-          <FadeIn delay={0.3}>
-            <p className="text-xl md:text-2xl text-muted-foreground font-light mb-8 max-w-xl">
-              Data science graduate student and AWS certified cloud professional with 9.8+ years building serverless data platforms, full-stack systems, and grounded LLM assistants.
-            </p>
-          </FadeIn>
+        <Reveal delay={80}>
+          <div className="mt-7 inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3.5 py-1.5 text-xs font-semibold text-emerald-700 dark:text-emerald-400">
+            <span className="relative flex h-2 w-2">
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-500 opacity-60" />
+              <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
+            </span>
+            Open to full-time roles from Spring 2027
+          </div>
+        </Reveal>
 
-          <FadeIn delay={0.4} className="flex flex-col sm:flex-row gap-6 text-sm text-muted-foreground mb-12">
-            <div className="flex items-center gap-2">
-              <MapPin size={18} className="text-primary" />
-              <span>{personalInfo.location}</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <Briefcase size={18} className="text-secondary" />
-              <span>9.7+ Years Experience</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <Mail size={18} className="text-accent" />
-              <span>{personalInfo.email}</span>
-            </div>
-          </FadeIn>
+        <Reveal delay={140}>
+          <h1 className="mt-5 text-4xl font-extrabold tracking-tight sm:text-5xl md:text-6xl">{profile.name}</h1>
+          <p className="mt-4 text-lg font-medium text-accent md:text-xl">{profile.roles.join(" · ")}</p>
+        </Reveal>
 
-          <FadeIn delay={0.5} className="flex flex-wrap gap-4">
-            <a
-              href="#projects"
-              className="px-8 py-4 rounded-xl font-bold bg-gradient-to-r from-primary to-secondary text-primary-foreground shadow-[0_0_30px_-5px_rgba(0,240,255,0.5)] hover:shadow-[0_0_40px_-5px_rgba(0,240,255,0.7)] hover:-translate-y-1 transition-all duration-300"
-            >
-              View My Work
-            </a>
-            <a
-              href="#contact"
-              className="px-8 py-4 rounded-xl font-bold glass hover:bg-white/10 hover:-translate-y-1 transition-all duration-300"
-            >
-              Contact Me
-            </a>
-            <a
-              href={`${import.meta.env.BASE_URL}Dhanush_Mathivanan_Resume.pdf`}
-              download="Dhanush_Mathivanan_Resume.pdf"
-              className="group flex items-center gap-2 px-8 py-4 rounded-xl font-bold border border-primary/40 text-primary hover:bg-primary/10 hover:border-primary hover:-translate-y-1 transition-all duration-300"
-            >
-              <Download size={18} className="group-hover:animate-bounce" />
-              Resume
-            </a>
-          </FadeIn>
-        </div>
+        <Reveal delay={200}>
+          <p className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-muted md:text-lg">{profile.intro}</p>
+          <div className="mt-5 flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-sm text-muted">
+            <span className="inline-flex items-center gap-1.5">
+              <MapPin size={15} /> {profile.location}
+            </span>
+            <span className="inline-flex items-center gap-1.5">
+              <GraduationCap size={15} /> M.S. Data Science, GWU
+            </span>
+          </div>
+        </Reveal>
 
-        <FadeIn delay={0.6} direction="left" className="hidden lg:flex justify-center relative">
-          <motion.div 
-            animate={{ y: [0, -20, 0] }}
-            transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-            className="relative"
+        <Reveal delay={260} className="mt-8 flex flex-wrap items-center justify-center gap-3">
+          <a href="#projects" className="btn-primary">
+            See my projects <ArrowRight size={16} />
+          </a>
+          <a href={profile.resume} target="_blank" rel="noopener noreferrer" className="btn-ghost">
+            <FileText size={16} /> Resume
+          </a>
+          <a href={`mailto:${profile.email}`} className="btn-ghost">
+            <Mail size={16} /> Email
+          </a>
+        </Reveal>
+
+        <Reveal delay={300} className="mt-6 flex items-center justify-center gap-2">
+          <a
+            href={profile.github}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="GitHub"
+            className="grid h-10 w-10 place-items-center rounded-full text-muted transition-colors hover:bg-surface-2 hover:text-ink"
           >
-            <div className="absolute inset-0 bg-primary/30 blur-[80px] rounded-full" />
-            <img 
-              src={`${import.meta.env.BASE_URL}images/avatar.png`} 
-              alt="Avatar" 
-              className="w-80 h-80 object-cover rounded-full border-2 border-primary/50 p-2 glass relative z-10"
-            />
-            {/* Orbiting element */}
-            <motion.div 
-              animate={{ rotate: 360 }}
-              transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-              className="absolute -inset-8 border border-white/10 rounded-full border-dashed"
-            >
-              <div className="absolute top-0 left-1/2 w-4 h-4 bg-secondary rounded-full shadow-[0_0_15px_rgba(0,100,255,1)]" />
-            </motion.div>
-          </motion.div>
-        </FadeIn>
+            <FaGithub size={20} />
+          </a>
+          <a
+            href={profile.linkedin}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn"
+            className="grid h-10 w-10 place-items-center rounded-full text-muted transition-colors hover:bg-surface-2 hover:text-[#0a66c2]"
+          >
+            <FaLinkedin size={20} />
+          </a>
+        </Reveal>
       </div>
 
-      {/* Scroll indicator */}
-      <motion.a 
-        href="#about"
-        animate={{ y: [0, 10, 0] }}
-        transition={{ duration: 2, repeat: Infinity }}
-        className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-muted-foreground hover:text-primary transition-colors z-20"
-      >
-        <span className="text-xs uppercase tracking-widest font-display">Scroll</span>
-        <div className="w-[1px] h-12 bg-gradient-to-b from-primary to-transparent" />
-      </motion.a>
+      <div className="mx-auto mt-16 max-w-5xl px-5 md:px-8">
+        <Reveal className="grid grid-cols-2 gap-3 md:grid-cols-4 md:gap-4">
+          {stats.map((s) => (
+            <div key={s.label} className="card px-5 py-5 text-left">
+              <div className="text-3xl font-bold tracking-tight">{s.value}</div>
+              <div className="mt-1 text-sm text-muted">{s.label}</div>
+            </div>
+          ))}
+        </Reveal>
+
+        <Reveal className="mt-12 text-center">
+          <p className="eyebrow !text-muted">Enterprise clients I've built software for</p>
+          <div className="mt-5 flex flex-wrap items-center justify-center gap-x-10 gap-y-3">
+            {clients.map((c) => (
+              <span key={c} className="text-lg font-semibold tracking-tight text-muted/80">
+                {c}
+              </span>
+            ))}
+          </div>
+        </Reveal>
+      </div>
     </section>
   );
 }

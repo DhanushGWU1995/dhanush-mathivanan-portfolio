@@ -1,91 +1,54 @@
-import { FadeIn } from "./FadeIn";
-import { SectionHeader } from "./SectionHeader";
-import { usePortfolioData } from "@/hooks/use-portfolio-data";
-import { Mail, Phone, Github, Linkedin, ArrowRight, Download, Handshake, PenSquare } from "lucide-react";
+import { FileText, Handshake, Mail, PenSquare, Phone } from "lucide-react";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { profile } from "@/data/portfolio";
+import { Reveal } from "./Reveal";
+
+const channels = [
+  { label: "LinkedIn", href: profile.linkedin, icon: FaLinkedin },
+  { label: "GitHub", href: profile.github, icon: FaGithub },
+  { label: "Handshake", href: profile.handshake, icon: Handshake },
+  { label: "Tech blog", href: profile.blog, icon: PenSquare },
+];
 
 export function Contact() {
-  const { personalInfo } = usePortfolioData();
-
   return (
-    <section id="contact" className="py-32 relative overflow-hidden">
-      {/* Decorative large text */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[15vw] font-display font-bold text-white/5 whitespace-nowrap pointer-events-none select-none z-0">
-        LET'S TALK
-      </div>
-
-      <div className="max-w-5xl mx-auto px-6 md:px-12 relative z-10 text-center">
-        <FadeIn>
-          <div className="inline-block mb-4 px-4 py-1.5 rounded-full border border-primary/30 text-primary text-sm tracking-widest font-display uppercase bg-primary/5">
-            What's Next?
-          </div>
-          <h2 className="text-4xl md:text-6xl font-bold font-display mb-6">Get In Touch</h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-12">
-            Although I'm currently focused on my master's degree, my inbox is always open. 
-            Whether you have a question or just want to say hi, I'll try my best to get back to you!
+    <section id="contact" className="py-20 md:py-28">
+      <div className="mx-auto max-w-4xl px-5 md:px-8">
+        <Reveal className="card relative overflow-hidden px-6 py-12 text-center md:px-14 md:py-16">
+          <div aria-hidden className="pointer-events-none absolute -top-24 left-1/2 h-64 w-[520px] -translate-x-1/2 rounded-full bg-accent/15 blur-[90px]" />
+          <p className="eyebrow relative">Contact</p>
+          <h2 className="relative mt-3 text-3xl font-bold tracking-tight md:text-4xl">Let's talk</h2>
+          <p className="relative mx-auto mt-4 max-w-xl text-muted">
+            I'm looking for full-time Data Science, Machine Learning, Data Engineering, and Cloud roles starting Spring 2027,
+            and I'm open to relocating anywhere in the US. The fastest way to reach me is email.
           </p>
-        </FadeIn>
 
-        <FadeIn delay={0.2} className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-16 flex-wrap">
-          <a 
-            href={`mailto:${personalInfo.email}`}
-            className="group flex items-center justify-between w-full sm:w-auto min-w-[280px] px-6 py-4 glass-card rounded-xl hover:bg-primary/10 hover:border-primary/50 transition-all duration-300"
-          >
-            <div className="flex items-center gap-4">
-              <Mail className="text-primary group-hover:scale-110 transition-transform" />
-              <div className="text-left">
-                <div className="text-xs text-muted-foreground uppercase tracking-wider mb-1">Email Me</div>
-                <div className="font-medium text-foreground">{personalInfo.email}</div>
-              </div>
-            </div>
-            <ArrowRight size={18} className="text-primary opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
-          </a>
-
-          <a 
-            href={`tel:${personalInfo.phone.replace(/-/g, '')}`}
-            className="group flex items-center justify-between w-full sm:w-auto min-w-[280px] px-6 py-4 glass-card rounded-xl hover:bg-secondary/10 hover:border-secondary/50 transition-all duration-300"
-          >
-            <div className="flex items-center gap-4">
-              <Phone className="text-secondary group-hover:scale-110 transition-transform" />
-              <div className="text-left">
-                <div className="text-xs text-muted-foreground uppercase tracking-wider mb-1">Call Me</div>
-                <div className="font-medium text-foreground">{personalInfo.phone}</div>
-              </div>
-            </div>
-            <ArrowRight size={18} className="text-secondary opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
-          </a>
-
-          <a 
-            href={`${import.meta.env.BASE_URL}Dhanush_Mathivanan_Resume.pdf`}
-            download="Dhanush_Mathivanan_Resume.pdf"
-            className="group flex items-center justify-between w-full sm:w-auto min-w-[280px] px-6 py-4 glass-card rounded-xl hover:bg-accent/10 hover:border-accent/50 transition-all duration-300"
-          >
-            <div className="flex items-center gap-4">
-              <Download className="text-accent group-hover:scale-110 group-hover:animate-bounce transition-transform" />
-              <div className="text-left">
-                <div className="text-xs text-muted-foreground uppercase tracking-wider mb-1">Download</div>
-                <div className="font-medium text-foreground">My Resume</div>
-              </div>
-            </div>
-            <ArrowRight size={18} className="text-accent opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
-          </a>
-        </FadeIn>
-
-        <FadeIn delay={0.3}>
-          <div className="flex items-center justify-center gap-6">
-            <a href={personalInfo.github} target="_blank" rel="noopener noreferrer" className="p-4 glass rounded-full hover:bg-white hover:text-black transition-all duration-300 transform hover:-translate-y-2" title="GitHub">
-              <Github size={24} />
+          <div className="relative mt-8 flex flex-wrap items-center justify-center gap-3">
+            <a href={`mailto:${profile.email}`} className="btn-primary">
+              <Mail size={16} /> {profile.email}
             </a>
-            <a href={personalInfo.linkedin} target="_blank" rel="noopener noreferrer" className="p-4 glass rounded-full hover:bg-[#0077b5] hover:text-white hover:border-[#0077b5] transition-all duration-300 transform hover:-translate-y-2" title="LinkedIn">
-              <Linkedin size={24} />
+            <a href={`tel:${profile.phone.replace(/-/g, "")}`} className="btn-ghost">
+              <Phone size={16} /> {profile.phone}
             </a>
-            <a href={personalInfo.handshake} target="_blank" rel="noopener noreferrer" className="p-4 glass rounded-full hover:bg-[#E8475F] hover:text-white hover:border-[#E8475F] transition-all duration-300 transform hover:-translate-y-2" title="Handshake Profile">
-              <Handshake size={24} />
-            </a>
-            <a href={personalInfo.blog} target="_blank" rel="noopener noreferrer" className="p-4 glass rounded-full hover:bg-[#FF5722] hover:text-white hover:border-[#FF5722] transition-all duration-300 transform hover:-translate-y-2" title="Tech Blog">
-              <PenSquare size={24} />
+            <a href={profile.resume} target="_blank" rel="noopener noreferrer" className="btn-ghost">
+              <FileText size={16} /> Resume
             </a>
           </div>
-        </FadeIn>
+
+          <div className="relative mt-8 flex flex-wrap items-center justify-center gap-2">
+            {channels.map(({ label, href, icon: Icon }) => (
+              <a
+                key={label}
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-full px-3.5 py-2 text-sm font-medium text-muted transition-colors hover:bg-surface-2 hover:text-ink"
+              >
+                <Icon size={16} /> {label}
+              </a>
+            ))}
+          </div>
+        </Reveal>
       </div>
     </section>
   );

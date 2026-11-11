@@ -1,94 +1,117 @@
-import { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
-import { clsx } from "clsx";
-import { twMerge } from "tailwind-merge";
+import { useEffect, useState } from "react";
+import { FileText, Menu, Moon, Sun, X } from "lucide-react";
+import { profile } from "@/data/portfolio";
+import { useTheme } from "@/hooks/useTheme";
 
-const navLinks = [
-  { name: "About", href: "#about" },
-  { name: "Skills", href: "#skills" },
-  { name: "Experience", href: "#experience" },
-  { name: "Education", href: "#education" },
-  { name: "Projects", href: "#projects" },
-  { name: "Contact", href: "#contact" },
+const links = [
+  { id: "about", label: "About" },
+  { id: "experience", label: "Experience" },
+  { id: "projects", label: "Projects" },
+  { id: "skills", label: "Skills" },
+  { id: "education", label: "Education" },
+  { id: "contact", label: "Contact" },
 ];
 
 export function Navbar() {
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { theme, toggle } = useTheme();
+  const [active, setActive] = useState("");
+  const [open, setOpen] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    const sections = links
+      .map((l) => document.getElementById(l.id))
+      .filter((el): el is HTMLElement => el !== null);
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visible = entries.filter((e) => e.isIntersecting);
+        if (visible.length) setActive(visible[0].target.id);
+      },
+      { rootMargin: "-45% 0px -50% 0px" },
+    );
+    sections.forEach((s) => observer.observe(s));
+    return () => observer.disconnect();
   }, []);
 
-  return (
-    <header
-      className={twMerge(
-        clsx(
-          "fixed top-0 inset-x-0 z-50 transition-all duration-300",
-          isScrolled ? "py-4 glass" : "py-6 bg-transparent"
-        )
-      )}
+  const themeButton = (
+    <button
+      type="button"
+      onClick={toggle}
+      aria-label={theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}
+      className="grid h-9 w-9 place-items-center rounded-full text-muted transition-colors hover:bg-surface-2 hover:text-ink"
     >
-      <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between">
-        <a href="#top" className="text-2xl font-bold font-display text-gradient tracking-widest">
-          DM.
+      {theme === "dark" ? <Sun size={17} /> : <Moon size={17} />}
+    </button>
+  );
+
+  return (
+    <header className="fixed inset-x-0 top-4 z-50 px-4">
+      <nav
+        aria-label="Main"
+        className="mx-auto flex max-w-fit items-center gap-1 rounded-full border border-line bg-surface/80 p-1.5 shadow-lg shadow-black/5 backdrop-blur-xl"
+      >
+        <a
+          href="#top"
+          className="rounded-full px-3 py-1.5 text-sm font-bold tracking-tight text-ink"
+          aria-label="Back to top"
+        >
+          DM
         </a>
 
-        {/* Desktop Nav */}
-        <nav className="hidden md:flex items-center gap-8">
-          {navLinks.map((link) => (
+        <div className="hidden items-center md:flex">
+          {links.map((link) => (
             <a
-              key={link.name}
-              href={link.href}
-              className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors duration-200"
+              key={link.id}
+              href={`#${link.id}`}
+              className={`rounded-full px-3.5 py-1.5 text-sm font-medium transition-colors ${
+                active === link.id ? "bg-accent-soft text-accent" : "text-muted hover:text-ink"
+              }`}
             >
-              {link.name}
+              {link.label}
+            </a>
+          ))}
+        </div>
+
+        {themeButton}
+
+        <a href={profile.resume} target="_blank" rel="noopener noreferrer" className="btn-primary !px-4 !py-1.5 hidden sm:inline-flex">
+          <FileText size={15} />
+          Resume
+        </a>
+
+        <button
+          type="button"
+          className="grid h-9 w-9 place-items-center rounded-full text-ink md:hidden"
+          onClick={() => setOpen((o) => !o)}
+          aria-label={open ? "Close menu" : "Open menu"}
+          aria-expanded={open}
+        >
+          {open ? <X size={19} /> : <Menu size={19} />}
+        </button>
+      </nav>
+
+      {open && (
+        <div className="card mx-auto mt-2 flex max-w-sm flex-col p-2 md:hidden">
+          {links.map((link) => (
+            <a
+              key={link.id}
+              href={`#${link.id}`}
+              onClick={() => setOpen(false)}
+              className="rounded-xl px-4 py-2.5 text-sm font-medium text-ink hover:bg-surface-2"
+            >
+              {link.label}
             </a>
           ))}
           <a
-            href="#contact"
-            className="px-5 py-2.5 rounded-full text-sm font-semibold bg-primary/10 text-primary border border-primary/20 hover:bg-primary hover:text-primary-foreground transition-all duration-300 shadow-[0_0_15px_-3px_rgba(0,240,255,0.3)] hover:shadow-[0_0_25px_-3px_rgba(0,240,255,0.6)]"
+            href={profile.resume}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => setOpen(false)}
+            className="rounded-xl px-4 py-2.5 text-sm font-semibold text-accent hover:bg-surface-2"
           >
-            Hire Me
+            Resume (PDF)
           </a>
-        </nav>
-
-        {/* Mobile Toggle */}
-        <button
-          className="md:hidden text-foreground hover:text-primary transition-colors"
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-        >
-          {mobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
-        </button>
-      </div>
-
-      {/* Mobile Nav */}
-      <AnimatePresence>
-        {mobileMenuOpen && (
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            className="absolute top-full left-0 w-full glass border-t border-white/10 py-6 px-6 flex flex-col gap-4 shadow-2xl md:hidden"
-          >
-            {navLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                onClick={() => setMobileMenuOpen(false)}
-                className="text-lg font-medium text-foreground hover:text-primary transition-colors"
-              >
-                {link.name}
-              </a>
-            ))}
-          </motion.div>
-        )}
-      </AnimatePresence>
+        </div>
+      )}
     </header>
   );
 }

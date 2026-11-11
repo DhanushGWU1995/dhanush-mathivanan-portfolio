@@ -1,62 +1,48 @@
-import { FadeIn } from "./FadeIn";
-import { SectionHeader } from "./SectionHeader";
-import { usePortfolioData } from "@/hooks/use-portfolio-data";
-import { Briefcase } from "lucide-react";
+import { experience } from "@/data/portfolio";
+import { Reveal } from "./Reveal";
+import { Section } from "./Section";
 
 export function Experience() {
-  const { experience } = usePortfolioData();
-
   return (
-    <section id="experience" className="py-24 relative">
-      <div className="max-w-4xl mx-auto px-6 md:px-12">
-        <SectionHeader title="Work Experience" centered />
-        
-        <div className="relative mt-16">
-          {/* Vertical Line */}
-          <div className="absolute left-0 md:left-1/2 top-0 bottom-0 w-[2px] bg-gradient-to-b from-primary via-secondary to-transparent -translate-x-1/2" />
-
-          <div className="space-y-16">
-            {experience.map((job, index) => {
-              const isEven = index % 2 === 0;
-              
-              return (
-                <FadeIn key={index} direction={isEven ? "right" : "left"} className="relative flex flex-col md:flex-row items-center w-full">
-                  {/* Timeline Dot */}
-                  <div className="absolute left-0 md:left-1/2 w-10 h-10 rounded-full glass border-2 border-primary bg-background flex items-center justify-center -translate-x-1/2 z-10 shadow-[0_0_15px_rgba(0,240,255,0.4)]">
-                    <Briefcase size={16} className="text-primary" />
-                  </div>
-
-                  {/* Content Container */}
-                  <div className={`w-full md:w-1/2 pl-12 md:pl-0 ${isEven ? "md:pr-16 md:text-right" : "md:pl-16 md:ml-auto"}`}>
-                    <div className="glass-card p-6 md:p-8 rounded-2xl hover:border-primary/50 relative overflow-hidden group">
-                      <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-                      
-                      <div className="text-sm font-display text-primary font-bold mb-2 tracking-widest uppercase">
-                        {job.duration}
-                      </div>
-                      <h3 className="text-2xl font-bold font-display text-foreground mb-1">
-                        {job.role}
-                      </h3>
-                      <div className="text-lg text-muted-foreground mb-4">
-                        {job.company} {job.client && <span className="opacity-60 text-sm block mt-1">Client: {job.client}</span>}
-                      </div>
-                      
-                      <ul className="space-y-3 text-muted-foreground text-sm text-left">
-                        {job.highlights.map((highlight, i) => (
-                          <li key={i} className="flex items-start gap-2">
-                            <span className="text-primary mt-1 flex-shrink-0">▹</span>
-                            <span className="leading-relaxed">{highlight}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
-                </FadeIn>
-              );
-            })}
-          </div>
-        </div>
-      </div>
-    </section>
+    <Section
+      id="experience"
+      eyebrow="Experience"
+      title="9+ years of building production systems"
+      subtitle="Backend, data, and cloud work for enterprise clients, followed by graduate study and campus IT at GWU."
+      className="bg-surface-2/50"
+    >
+      <ol className="relative mx-auto max-w-4xl border-l border-line pl-6 md:pl-10">
+        {experience.map((job, i) => (
+          <li key={job.company + job.duration} className="relative mb-6 last:mb-0">
+            <span
+              aria-hidden
+              className={`absolute -left-[31px] top-7 h-3.5 w-3.5 rounded-full border-2 border-bg md:-left-[47px] ${
+                i === 0 ? "bg-emerald-500" : "bg-accent"
+              }`}
+            />
+            <Reveal className="card p-6 md:p-7">
+              <div className="flex flex-col gap-1 sm:flex-row sm:items-start sm:justify-between sm:gap-4">
+                <div>
+                  <h3 className="text-lg font-semibold leading-snug">{job.role}</h3>
+                  <p className="mt-0.5 font-medium text-accent">{job.company}</p>
+                  {(job.client || job.location) && (
+                    <p className="mt-0.5 text-sm text-muted">{job.client ? `Client: ${job.client}` : job.location}</p>
+                  )}
+                </div>
+                <span className="chip mt-2 shrink-0 self-start font-mono sm:mt-0">{job.duration}</span>
+              </div>
+              <ul className="mt-4 space-y-2">
+                {job.highlights.map((h) => (
+                  <li key={h.slice(0, 32)} className="relative pl-4 text-sm leading-relaxed text-muted">
+                    <span aria-hidden className="absolute left-0 top-[9px] h-1.5 w-1.5 rounded-full bg-accent/60" />
+                    {h}
+                  </li>
+                ))}
+              </ul>
+            </Reveal>
+          </li>
+        ))}
+      </ol>
+    </Section>
   );
 }

@@ -1,13 +1,15 @@
+import { profile } from "@/data/portfolio";
+
 export function Footer() {
   return (
-    <footer className="border-t border-white/10 bg-black/40 py-8 relative z-10">
-      <div className="max-w-7xl mx-auto px-6 md:px-12 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-muted-foreground">
+    <footer className="border-t border-line py-8">
+      <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-2 px-5 text-sm text-muted md:flex-row md:px-8">
         <p>
-          © {new Date().getFullYear()} Dhanush Mathivanan. All rights reserved.
+          © {new Date().getFullYear()} {profile.name}
         </p>
-        <p>
-          Designed &amp; Built by Dhanush Mathivanan
-        </p>
+        <a href="#top" className="hover:text-ink">
+          Back to top ↑
+        </a>
       </div>
     </footer>
   );
