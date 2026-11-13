@@ -48,7 +48,7 @@ export const profile = {
   linkedin: "https://www.linkedin.com/in/dhanush-mathivanan-a65202120/",
   handshake: "https://gwu.joinhandshake.com/profiles/5kmn84",
   blog: "https://techwithdhanush.blogspot.com/",
-  resume: `${BASE}Dhanush_Mathivanan_Resume.pdf`,
+  resume: `${BASE}Dhanush_Mathivanan_Resume_Data_Scientist_ML_Engineer.pdf`,
   photo: `${BASE}images/headshot.jpg`,
   intro:
     "I build data pipelines, machine learning models, and LLM applications on AWS. I spent 9+ years in industry shipping serverless backends and data systems for Porsche, ETS, and Roche, and I'm now finishing an M.S. in Data Science at The George Washington University.",
